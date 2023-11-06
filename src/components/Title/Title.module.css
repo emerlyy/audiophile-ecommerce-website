@@ -1,0 +1,68 @@
+.title {
+	color: var(--color-black);
+	font-family: "Manrope";
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: normal;
+}
+
+.title-2xl {
+	font-size: 56px;
+	line-height: 103.571%;
+	letter-spacing: 2px;
+}
+
+.title-xl {
+	font-size: 40px;
+	line-height: 110%;
+	letter-spacing: 1.429px;
+}
+
+.title-lg {
+	font-size: 32px;
+	line-height: 112.5%;
+	letter-spacing: 1.143px;
+}
+
+.title-md {
+	font-size: 28px;
+	letter-spacing: 2px;
+}
+
+.title-sm {
+	font-size: 24px;
+	letter-spacing: 1.714px;
+}
+
+.title-xs {
+	font-size: 18px;
+	letter-spacing: 1.286px;
+}
+
+.title-overline {
+	font-size: 14px;
+	letter-spacing: 10px;
+	font-weight: 400;
+}
+
+.title-subtitle {
+	font-size: 13px;
+	line-height: 192.308%;
+	letter-spacing: 0.929px;
+}
+
+.title-dark {
+	color: var(--color-black);
+}
+
+.title-light {
+	color: var(--color-white);
+}
+
+.title-accent {
+	color: var(--color-accent);
+}
+
+.title-transparent {
+	color: rgba(255, 255, 255, 0.5);
+}
