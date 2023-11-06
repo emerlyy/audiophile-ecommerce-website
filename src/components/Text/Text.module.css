@@ -1,0 +1,14 @@
+.text {
+	color: var(--color-text);
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 25px;
+}
+
+.text-dark {
+	color: var(--color-text);
+}
+
+.text-light {
+	color: var(--color-text-light);
+}
