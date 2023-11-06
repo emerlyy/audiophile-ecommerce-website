@@ -1,0 +1,27 @@
+.hero {
+	background-color: #191919;
+}
+
+.inner {
+	padding: 130px 0 160px;
+	background: url("./src/assets/home/desktop/image-hero.jpg") no-repeat right -120px
+		top -80px;
+	background-size: 1300px;
+}
+
+.content {
+	width: 396px;
+}
+
+.overline {
+	margin-bottom: 24px;
+}
+
+.title {
+	margin-bottom: 24px;
+}
+
+.text {
+	max-width: 38ch;
+	margin-bottom: 40px;
+}
