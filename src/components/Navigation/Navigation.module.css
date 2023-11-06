@@ -1,0 +1,19 @@
+.list {
+	display: inline-flex;
+	gap: 2.125rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.link {
+	font-size: 0.8125rem;
+	line-height: 1.5625rem;
+	letter-spacing: 0.125rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--color-white);
+	transition: 0.1s;
+	&:hover {
+		color: var(--color-accent);
+	}
+}
