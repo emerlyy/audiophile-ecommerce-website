@@ -1,0 +1,38 @@
+.button {
+	display: inline-flex;
+	padding: 15px 30px;
+	font-size: 13px;
+	letter-spacing: 1px;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	transition: 0.2s;
+}
+
+.button-primary {
+	color: var(--color-white);
+	background: var(--color-accent);
+
+	&:hover {
+		background: var(--color-accent-light);
+	}
+}
+
+.button-outlined {
+	color: var(--color-black);
+	border: 1px solid currentColor;
+
+	&:hover {
+		color: var(--color-white);
+		background: var(--color-black);
+		border: none;
+	}
+}
+
+.button-text {
+	color: var(--color-text);
+
+	&:hover {
+		color: var(--color-accent);
+	}
+}
