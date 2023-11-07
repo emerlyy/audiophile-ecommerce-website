@@ -1,4 +1,7 @@
 .logo {
+	display: inline-block;
+	max-width: 8.9375rem;
+
 	> img {
 		width: 100%;
 	}
