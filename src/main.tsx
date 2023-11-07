@@ -6,11 +6,23 @@ import { store } from "./store";
 
 import "./index.css";
 import HomePage from "./pages/HomePage";
+import PageTemplate from "./pages/templates/PageTemplate";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <HomePage />,
+		element: <PageTemplate />,
+		children: [
+			{
+				path: "/",
+				element: <HomePage />,
+			},
+			{
+				path: "headphones",
+				element: <>Head</>,
+			},
+		],
+		errorElement:<>Page not found</>
 	},
 ]);
 

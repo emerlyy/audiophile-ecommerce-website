@@ -10,14 +10,12 @@ import ZX9Speaker from "@/sections/ZX9Speaker/ZX9Speaker";
 const HomePage = () => {
 	return (
 		<>
-			<Header />
 			<Hero />
 			<Categories />
 			<ZX9Speaker />
 			<ZX7Speaker />
 			<YX1Earphones />
 			<BestGear />
-			<Footer />
 		</>
 	);
 };
