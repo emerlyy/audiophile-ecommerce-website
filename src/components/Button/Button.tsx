@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Button.module.css";
 
 type ButtonType = "primary" | "outlined" | "text";
+type ButtonColor = "accent" | "dark";
 
 const types: {
 	[key in ButtonType]: string;
@@ -10,9 +11,23 @@ const types: {
 	outlined: styles["button-outlined"],
 	text: styles["button-text"],
 };
+const colors: {
+	[key in ButtonColor]: string;
+} = {
+	accent: styles["button-accent"],
+	dark: styles["button-dark"],
+};
 
-const getStyles = (type: ButtonType, extra?: string) => {
+const getStyles = (
+	type: ButtonType,
+	color: ButtonColor | undefined,
+	extra?: string
+) => {
 	let buttonStyles = `${styles.button} ${types[type]}`;
+
+	if (color) {
+		buttonStyles += ` ${colors[color]}`;
+	}
 
 	if (extra) {
 		buttonStyles += ` ${extra}`;
@@ -23,6 +38,7 @@ const getStyles = (type: ButtonType, extra?: string) => {
 
 type ButtonProps = {
 	type?: ButtonType;
+	color?: ButtonColor;
 	href: string;
 	children: React.ReactNode;
 	extraClasses?: string;
@@ -30,12 +46,13 @@ type ButtonProps = {
 
 const Button = ({
 	type = "primary",
+	color,
 	extraClasses,
 	href,
 	children,
 }: ButtonProps) => {
 	return (
-		<Link className={getStyles(type, extraClasses)} to={href}>
+		<Link className={getStyles(type, color, extraClasses)} to={href}>
 			{children}
 		</Link>
 	);
