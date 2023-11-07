@@ -1,12 +1,15 @@
+import data from "@/data/data.json";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { store } from "./store";
-
-import "./index.css";
+import CategoryPage from "./pages/CategoryPage";
 import HomePage from "./pages/HomePage";
 import PageTemplate from "./pages/templates/PageTemplate";
+import { store } from "./store";
+import { Product } from "./types";
+
+import "./index.css";
 
 const router = createBrowserRouter([
 	{
@@ -18,11 +21,16 @@ const router = createBrowserRouter([
 				element: <HomePage />,
 			},
 			{
-				path: "headphones",
-				element: <>Head</>,
+				path: ":category",
+				element: <CategoryPage />,
+				loader: ({ params }) => {
+					return (data as Product[])
+						.filter((item) => item.category === params.category)
+						.sort((a, b) => b.id - a.id);
+				},
 			},
 		],
-		errorElement:<>Page not found</>
+		errorElement: <>Page not found</>,
 	},
 ]);
 
