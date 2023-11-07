@@ -8,17 +8,17 @@ import styles from "./Categories.module.css";
 const categories: Category[] = [
 	{
 		title: "Headphones",
-		link: "#",
+		link: "/headphones",
 		image: HeadphonesImage,
 	},
 	{
 		title: "Speakers",
-		link: "#",
+		link: "/speakers",
 		image: SpeakersImage,
 	},
 	{
 		title: "Earphones",
-		link: "#",
+		link: "/earphones",
 		image: EarphonesImage,
 	},
 ];
