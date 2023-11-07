@@ -1,0 +1,54 @@
+.footer {
+	background-color: var(--color-dark);
+}
+
+.inner {
+	position: relative;
+	padding: 4.7rem 0 3rem 0;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 6.3125rem;
+		height: 0.25rem;
+		background: var(--color-accent);
+	}
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2.25rem;
+}
+
+.content {
+	display: grid;
+	grid-template-areas:
+		"a c"
+		"b c";
+	grid-template-columns: 48.5% 1fr;
+	gap: 3.5rem;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.areaA {
+	grid-area: a;
+}
+
+.areaB {
+	grid-area: b;
+}
+
+.areaC {
+	grid-area: c;
+}
+
+.socials {
+	justify-self: end;
+	align-self: center;
+}
