@@ -1,0 +1,15 @@
+.zx7speaker {
+	margin-bottom: 3rem;
+}
+
+.inner {
+	background-color: var(--color-gray);
+	padding: 6.25rem;
+	border-radius: 0.5rem;
+	background: url("../../assets/home/desktop/image-speaker-zx7.jpg"),
+		lightgray 0px 0px / 100% 100% no-repeat;
+}
+
+.zx7title {
+	margin-bottom: 2rem;
+}
