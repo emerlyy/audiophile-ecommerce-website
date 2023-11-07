@@ -1,0 +1,10 @@
+.categories {
+	margin-bottom: 160px;
+}
+
+.stack {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 30px;
+}
