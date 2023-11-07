@@ -1,6 +1,6 @@
 import styles from "./Text.module.css";
 
-type TextColor = "dark" | "light";
+type TextColor = "dark" | "light" | "gray";
 
 type TextProps = {
 	color?: TextColor;
@@ -13,6 +13,7 @@ const colors: {
 } = {
 	dark: styles["text-dark"],
 	light: styles["text-light"],
+	gray: styles["text-gray"],
 };
 
 const getStyles = (color: TextColor, extra?: string) => {
