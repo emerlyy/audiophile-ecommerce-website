@@ -16,7 +16,6 @@ const CategoryPageItem = ({
 	new: isNew,
 	categoryImage,
 }: CategoryPageItemProps) => {
-	console.log(categoryImage);
 	return (
 		<div className={styles.categoryItem}>
 			<picture className={styles.categoryItemImage}>

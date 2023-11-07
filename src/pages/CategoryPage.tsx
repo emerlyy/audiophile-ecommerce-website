@@ -8,7 +8,7 @@ import styles from "./CategoryPage.module.css";
 const CategoryPage = () => {
 	const params = useParams();
 	const products = useLoaderData() as Product[];
-	console.log(products);
+
 	return (
 		<>
 			<CategoryPageTitle>{params.category}</CategoryPageTitle>
