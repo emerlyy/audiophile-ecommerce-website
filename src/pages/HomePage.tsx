@@ -15,7 +15,7 @@ const HomePage = () => {
 			<ZX9Speaker />
 			<ZX7Speaker />
 			<YX1Earphones />
-			<BestGear />
+			<BestGear mb='12.5rem'/>
 		</>
 	);
 };
