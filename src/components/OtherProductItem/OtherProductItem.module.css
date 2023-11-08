@@ -1,0 +1,15 @@
+.productWrapper {
+	text-align: center;
+}
+
+.productPicture {
+	display: block;
+	max-width: 100%;
+	object-fit: cover;
+	margin-bottom: 40px;
+	border-radius: 0.5rem;
+}
+
+.productTitle {
+	margin-bottom: 32px;
+}

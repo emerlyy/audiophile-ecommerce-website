@@ -1,0 +1,32 @@
+.featuresWrapper {
+	margin-bottom: 160px;
+}
+
+.content {
+	display: flex;
+	gap: 125px;
+	align-items: flex-start;
+}
+
+.features {
+	max-width: 57%;
+}
+
+.featuresText {
+	white-space: pre-line;
+}
+
+.title {
+	margin-bottom: 32px;
+}
+
+.addon {
+	display: flex;
+	align-items: flex-start;
+}
+
+.addonCount {
+	width: 32px;
+	color: var(--color-accent);
+	font-weight: bold;
+}
