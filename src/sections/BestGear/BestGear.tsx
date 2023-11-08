@@ -4,9 +4,14 @@ import BestGearTablet from "@/assets/shared/tablet/image-best-gear.jpg";
 import Text from "@/components/Text/Text";
 import Title from "@/components/Title/Title";
 import styles from "./BestGear.module.css";
-const BestGear = () => {
+
+type BestGearProps = {
+	mb?: string;
+};
+
+const BestGear = ({ mb }: BestGearProps) => {
 	return (
-		<section className={styles.bestGear}>
+		<section className={styles.bestGear} style={{ marginBottom: mb }}>
 			<div className="container">
 				<div className={styles.inner}>
 					<div className={styles.content}>
