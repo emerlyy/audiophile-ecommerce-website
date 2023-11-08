@@ -14,13 +14,13 @@ const ProductFeatures = ({ features, includedItems }: ProductFeaturesProps) => {
 			<div className="container">
 				<div className={styles.content}>
 					<div className={styles.features}>
-						<Title tag="h2" size="md" extraClasses={styles.title}>
+						<Title tag="h2" size="lg" extraClasses={styles.title}>
 							Features
 						</Title>
 						<Text extraClasses={styles.featuresText}>{features}</Text>
 					</div>
 					<div>
-						<Title tag="h2" size="md" extraClasses={styles.title}>
+						<Title tag="h2" size="lg" extraClasses={styles.title}>
 							In The Box
 						</Title>
 						<ul>

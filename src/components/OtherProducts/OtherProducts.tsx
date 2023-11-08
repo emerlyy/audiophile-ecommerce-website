@@ -11,7 +11,7 @@ const OtherProducts = ({ products }: OtherProductsProps) => {
 	return (
 		<div className={styles.other}>
 			<div className="container">
-				<Title tag="h2" size="md" extraClasses={styles.title}>
+				<Title tag="h2" size="lg" extraClasses={styles.title}>
 					You May Also Like
 				</Title>
 				<ul className={styles.productsList}>

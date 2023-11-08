@@ -1,5 +1,7 @@
+import { useCounter } from "@/hooks/useCounter";
 import { Product } from "@/types";
 import Button from "../Button/Button";
+import Counter from "../Counter/Counter";
 import GoBackLink from "../GoBackLink/GoBackLink";
 import Text from "../Text/Text";
 import Title from "../Title/Title";
@@ -16,6 +18,8 @@ const ProductDescription = ({
 	new: isNew,
 	image,
 }: ProductDescriptionProps) => {
+	const [count, increment, decrement] = useCounter();
+
 	return (
 		<div className={styles.product}>
 			<div className="container">
@@ -42,7 +46,14 @@ const ProductDescription = ({
 						</Title>
 						<Text extraClasses={styles.description}>{description}</Text>
 						<span className={styles.price}>$ {price}</span>
-						<Button href="#">Add to cart</Button>
+						<div className={styles.purchase}>
+							<Counter
+								value={count}
+								increment={increment}
+								decrement={decrement}
+							/>
+							<Button href="#">Add to cart</Button>
+						</div>
 					</div>
 				</div>
 			</div>

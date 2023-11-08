@@ -54,3 +54,9 @@
 	text-transform: uppercase;
 	margin-bottom: 47px;
 }
+
+.purchase {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}

@@ -11,7 +11,7 @@ const OtherProductItem = ({ slug, name, category, image }: Similar) => {
 				<source media="(min-width: 40rem)" srcSet={image.tablet} />
 				<img className={styles.productPicture} src={image.mobile} alt={name} />
 			</picture>
-			<Title tag="h3" extraClasses={styles.productTitle}>
+			<Title tag="h3" size="sm" extraClasses={styles.productTitle}>
 				{name}
 			</Title>
 			<Button href={`/${category}/${slug}`}>See Product</Button>

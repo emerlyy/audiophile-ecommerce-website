@@ -1,0 +1,35 @@
+.counter {
+	width: 120px;
+	height: 48px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 4px;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 1px;
+	background: var(--color-gray);
+
+	> span {
+		height: 16px;
+		text-align: center;
+		color: #000;
+	}
+}
+
+.button {
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	background: none;
+	border: none;
+	font-size: inherit;
+	line-height: inherit;
+	color: rgba(0, 0, 0, 0.25);
+	user-select: none;
+	transition: 0.2s;
+	&:hover {
+		color: var(--color-accent);
+	}
+}
