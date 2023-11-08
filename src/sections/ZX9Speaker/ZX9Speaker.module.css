@@ -8,7 +8,7 @@
 	background: #d87d4a;
 	display: flex;
 	gap: 8.625rem;
-	background: url("./src/assets/home/desktop/pattern-circles.svg") no-repeat -15rem -5rem,
+	background: url("/assets/home/desktop/pattern-circles.svg") no-repeat -15rem -5rem,
 		var(--color-accent);
 	background-size: cover;
 }
