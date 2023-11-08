@@ -1,6 +1,6 @@
 .stack {
 	display: flex;
 	flex-direction: column;
-	margin-block: 160px 240px;
+	margin-block: 160px 190px;
 	gap: 160px;
 }
