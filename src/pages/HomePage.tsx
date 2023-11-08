@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
 import BestGear from "@/sections/BestGear/BestGear";
 import Categories from "@/sections/Categories/Categories";
 import Hero from "@/sections/Hero/Hero";
@@ -15,7 +13,7 @@ const HomePage = () => {
 			<ZX9Speaker />
 			<ZX7Speaker />
 			<YX1Earphones />
-			<BestGear mb='12.5rem'/>
+			<BestGear mb="12.5rem" />
 		</>
 	);
 };
