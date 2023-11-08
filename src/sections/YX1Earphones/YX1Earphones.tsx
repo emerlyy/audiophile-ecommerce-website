@@ -19,7 +19,11 @@ const YX1Earphones = () => {
 						<Title size="md" color="dark" extraClasses={styles.yx1title}>
 							YX1 Earphones
 						</Title>
-						<Button href="/" type="outlined" color="dark">
+						<Button
+							href="http://localhost:5173/earphones/yx1-earphones"
+							type="outlined"
+							color="dark"
+						>
 							See Product
 						</Button>
 					</div>

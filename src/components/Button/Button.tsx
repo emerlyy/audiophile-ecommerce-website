@@ -52,7 +52,7 @@ const Button = ({
 	children,
 }: ButtonProps) => {
 	return (
-		<Link className={getStyles(type, color, extraClasses)} to={href}>
+		<Link className={getStyles(type, color, extraClasses)} to={href} reloadDocument={true}>
 			{children}
 		</Link>
 	);

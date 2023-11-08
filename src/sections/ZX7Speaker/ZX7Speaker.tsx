@@ -10,7 +10,7 @@ const ZX7Speaker = () => {
 					<Title size="md" color="dark" extraClasses={styles.zx7title}>
 						ZX7 Speaker
 					</Title>
-					<Button href="/" type="outlined">
+					<Button href="/speakers/zx7-speaker" type="outlined">
 						See Product
 					</Button>
 				</div>

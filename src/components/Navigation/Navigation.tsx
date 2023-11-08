@@ -31,7 +31,7 @@ const Navigation = () => {
 			<ul className={styles.list}>
 				{links.map((link) => (
 					<li key={link.href}>
-						<Link className={styles.link} to={link.href}>
+						<Link className={styles.link} to={link.href} reloadDocument={true}>
 							{link.title}
 						</Link>
 					</li>

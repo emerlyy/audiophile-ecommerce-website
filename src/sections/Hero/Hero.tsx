@@ -1,7 +1,7 @@
+import Button from "@/components/Button/Button";
 import Text from "@/components/Text/Text";
 import Title from "@/components/Title/Title";
 import styles from "./Hero.module.css";
-import Button from "@/components/Button/Button";
 
 const Hero = () => {
 	return (
@@ -28,7 +28,9 @@ const Hero = () => {
 							Experience natural, lifelike audio and exceptional build quality
 							made for the passionate music enthusiast.
 						</Text>
-					<Button href="/">See Product</Button>
+						<Button href="/headphones/xx99-mark-two-headphones">
+							See Product
+						</Button>
 					</div>
 				</div>
 			</div>
