@@ -9,10 +9,17 @@ type Addon = {
 	item: string;
 };
 
-type Similar = {
+export type Similar = {
 	slug: string;
 	name: string;
 	image: Image;
+	category: string;
+};
+
+export type Gallery = {
+	first: Image;
+	second: Image;
+	third: Image;
 };
 
 export type Product = {
@@ -27,10 +34,6 @@ export type Product = {
 	description: string;
 	features: string;
 	includes: Addon[];
-	gallery: {
-		first: Image;
-		second: Image;
-		third: Image;
-	};
+	gallery: Gallery;
 	others: Similar[];
 };
