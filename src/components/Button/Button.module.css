@@ -4,6 +4,8 @@
 	font-size: 13px;
 	letter-spacing: 1px;
 	font-weight: 700;
+	font-family: inherit;
+	border: none;
 	line-height: normal;
 	text-transform: uppercase;
 	user-select: none;

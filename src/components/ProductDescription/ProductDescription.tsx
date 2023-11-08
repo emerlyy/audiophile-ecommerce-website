@@ -52,7 +52,9 @@ const ProductDescription = ({
 								increment={increment}
 								decrement={decrement}
 							/>
-							<Button href="#">Add to cart</Button>
+							<Button role="button" onClick={() => {}}>
+								Add to cart
+							</Button>
 						</div>
 					</div>
 				</div>

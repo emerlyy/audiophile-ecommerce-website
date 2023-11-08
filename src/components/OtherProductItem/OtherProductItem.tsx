@@ -14,7 +14,7 @@ const OtherProductItem = ({ slug, name, category, image }: Similar) => {
 			<Title tag="h3" size="sm" extraClasses={styles.productTitle}>
 				{name}
 			</Title>
-			<Button href={`/${category}/${slug}`}>See Product</Button>
+			<Button role="link" href={`/${category}/${slug}`}>See Product</Button>
 		</div>
 	);
 };

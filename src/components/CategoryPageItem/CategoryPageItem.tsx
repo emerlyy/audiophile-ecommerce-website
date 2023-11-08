@@ -40,7 +40,7 @@ const CategoryPageItem = ({
 				<Text color="dark" extraClasses={styles.categoryItemText}>
 					{description}
 				</Text>
-				<Button href={`./${slug}`}>See Product</Button>
+				<Button role='link' href={`./${slug}`}>See Product</Button>
 			</div>
 		</div>
 	);

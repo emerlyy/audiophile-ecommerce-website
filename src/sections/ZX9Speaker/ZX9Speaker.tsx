@@ -29,7 +29,7 @@ const ZX9Speaker = () => {
 							Upgrade to premium speakers that are phenomenally built to deliver
 							truly remarkable sound.
 						</Text>
-						<Button href="/speakers/zx9-speaker" color="dark">
+						<Button role="link" href="/speakers/zx9-speaker" color="dark">
 							See Product
 						</Button>
 					</div>

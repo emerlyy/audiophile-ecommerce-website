@@ -36,7 +36,8 @@ const getStyles = (
 	return buttonStyles;
 };
 
-type ButtonProps = {
+type LinkButton = {
+	role: "link";
 	type?: ButtonType;
 	color?: ButtonColor;
 	href: string;
@@ -44,18 +45,40 @@ type ButtonProps = {
 	extraClasses?: string;
 };
 
-const Button = ({
-	type = "primary",
-	color,
-	extraClasses,
-	href,
-	children,
-}: ButtonProps) => {
-	return (
-		<Link className={getStyles(type, color, extraClasses)} to={href} reloadDocument={true}>
-			{children}
-		</Link>
-	);
+type TriggerButton = {
+	role: "button";
+	type?: ButtonType;
+	color?: ButtonColor;
+	onClick: React.MouseEventHandler<HTMLButtonElement>;
+	children: React.ReactNode;
+	extraClasses?: string;
+};
+
+type ButtonProps = LinkButton | TriggerButton;
+
+const Button = (props: ButtonProps) => {
+	const { role, type = "primary", color, children, extraClasses } = props;
+	switch (role) {
+		case "button":
+			return (
+				<button
+					className={getStyles(type, color, extraClasses)}
+					onClick={props.onClick}
+				>
+					{children}
+				</button>
+			);
+		case "link":
+			return (
+				<Link
+					className={getStyles(type, color, extraClasses)}
+					to={props.href}
+					reloadDocument={true}
+				>
+					{children}
+				</Link>
+			);
+	}
 };
 
 export default Button;
