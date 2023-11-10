@@ -4,14 +4,28 @@ type CounterProps = {
 	value: number;
 	increment: () => void;
 	decrement: () => void;
+	size?: "normal" | "small";
 };
 
-const Counter = ({ value, increment, decrement }: CounterProps) => {
+const Counter = ({
+	value,
+	increment,
+	decrement,
+	size = "normal",
+}: CounterProps) => {
 	return (
-		<div className={styles.counter}>
-			<button className={styles.button} onClick={decrement}>-</button>
+		<div
+			className={`${styles.counter} ${
+				size === "small" ? ` ${styles.small}` : ""
+			}`}
+		>
+			<button className={styles.button} onClick={decrement}>
+				-
+			</button>
 			<span>{value}</span>
-			<button className={styles.button} onClick={increment}>+</button>
+			<button className={styles.button} onClick={increment}>
+				+
+			</button>
 		</div>
 	);
 };
