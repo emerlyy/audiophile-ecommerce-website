@@ -1,6 +1,5 @@
 import styles from "./Title.module.css";
 
-type TitleTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type TitleSize =
 	| "2xl"
 	| "xl"
@@ -45,7 +44,7 @@ const getStyles = (size: TitleSize, color: TitleColor, extra?: string) => {
 };
 
 type TitleProps = {
-	tag?: TitleTag;
+	tag?: React.ElementType;
 	size?: TitleSize;
 	color?: TitleColor;
 	children: React.ReactNode;
