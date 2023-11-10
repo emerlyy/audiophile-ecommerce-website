@@ -9,27 +9,11 @@ type ProductDetailsProps = {
 };
 
 const ProductDetails = ({ product }: ProductDetailsProps) => {
-	const {
-		name,
-		description,
-		price,
-		new: isNew,
-		image,
-		features,
-		includes,
-		gallery,
-		others,
-		
-	} = product;
+	const { features, includes, gallery, others } = product;
+	
 	return (
 		<>
-			<ProductDescription
-				name={name}
-				description={description}
-				price={price}
-				new={isNew}
-				image={image}
-			/>
+			<ProductDescription product={product} />
 			<ProductFeatures features={features} includedItems={includes} />
 			<ProductGallery {...gallery} />
 			<OtherProducts products={others} />

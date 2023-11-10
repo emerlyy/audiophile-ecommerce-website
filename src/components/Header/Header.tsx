@@ -1,4 +1,4 @@
-import CartImage from "@/assets/shared/desktop/icon-cart.svg";
+import Cart from "@/features/cart/Cart";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
 import styles from "./Header.module.css";
@@ -10,7 +10,7 @@ const Header = () => {
 				<div className={styles.inner}>
 					<Logo />
 					<Navigation />
-					<img src={CartImage} alt="cart" />
+					<Cart />
 				</div>
 			</div>
 		</header>

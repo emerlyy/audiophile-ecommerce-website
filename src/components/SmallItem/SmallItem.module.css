@@ -1,0 +1,42 @@
+.smallItem {
+	display: grid;
+	grid-template-columns: 64px 1fr;
+	grid-template-rows: 64px;
+	gap: 16px;
+	align-items: center;
+}
+
+.image {
+	display: block;
+	max-width: 100%;
+	aspect-ratio: 1;
+	object-fit: contain;
+	border-radius: 0.5rem;
+	grid-row: 1/-1;
+	grid-column: 1;
+}
+
+.content {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	column-gap: 8px;
+}
+
+.itemName {
+	max-width: 100%;
+	font-weight: 700;
+	color: var(--color-black);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+}
+
+.itemPrice {
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.quantityCounter {
+	align-self: center;
+}
