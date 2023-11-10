@@ -8,6 +8,7 @@
 	border: none;
 	line-height: normal;
 	text-transform: uppercase;
+	cursor: pointer;
 	user-select: none;
 	transition: 0.2s;
 }
