@@ -61,7 +61,7 @@ const Cart = () => {
 						$ {items.reduce((acc, item) => acc + item.price * item.quantity, 0)}
 					</span>
 				</div>
-				<Button role="button" onClick={() => {}} extraClasses={styles.checkout}>
+				<Button role="link" href="/checkout" extraClasses={styles.checkout}>
 					Checkout
 				</Button>
 			</Modal>
