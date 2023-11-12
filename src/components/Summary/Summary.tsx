@@ -1,21 +1,16 @@
 import { selectAllCartItems } from "@/features/cart/cartSelectors";
+import { useCartTotals } from "@/features/cart/useCartTotals";
 import { useAppSelector } from "@/hooks/reduxHooks";
+import { formatPrice } from "@/utils/formatPrice";
 import Button from "../Button/Button";
 import SmallItem from "../SmallItem/SmallItem";
 import Text from "../Text/Text";
 import Title from "../Title/Title";
 import styles from "./Summary.module.css";
 
-const SHIPPING_COST = 50;
-
 const Summary = () => {
 	const items = useAppSelector(selectAllCartItems);
-	const totalPrice = items.reduce(
-		(total, item) => total + item.price * item.quantity,
-		0
-	);
-	const vat = totalPrice * 0.2;
-	const grandTotal = totalPrice + SHIPPING_COST;
+	const { totalPrice, tax, grandTotal } = useCartTotals();
 	return (
 		<div className={styles.summary}>
 			<Title tag="h2" size="xs">
@@ -36,7 +31,7 @@ const Summary = () => {
 			<div>
 				<div className={styles.totalsText}>
 					<Text tag="span">TOTAL</Text>
-					<span className={styles.price}>$ {totalPrice}</span>
+					<span className={styles.price}>$ {formatPrice(totalPrice)}</span>
 				</div>
 				<div className={styles.totalsText}>
 					<Text tag="span">SHIPPING</Text>
@@ -44,11 +39,11 @@ const Summary = () => {
 				</div>
 				<div className={styles.totalsText}>
 					<Text tag="span">VAT (INCLUDED)</Text>
-					<span className={styles.price}>$ {vat}</span>
+					<span className={styles.price}>$ {formatPrice(tax)}</span>
 				</div>
 				<div className={`${styles.totalsText} ${styles.grandTotal}`}>
 					<Text tag="span">GRAND TOTAL</Text>
-					<span className={styles.price}>$ {grandTotal}</span>
+					<span className={styles.price}>$ {formatPrice(grandTotal)}</span>
 				</div>
 			</div>
 			<Button role="button" form="checkout-form">

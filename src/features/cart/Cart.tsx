@@ -5,8 +5,10 @@ import SmallItem from "@/components/SmallItem/SmallItem";
 import Text from "@/components/Text/Text";
 import Title from "@/components/Title/Title";
 import { useModal } from "@/hooks/useModal";
+import { formatPrice } from "@/utils/formatPrice";
 import styles from "./Cart.module.css";
 import { useCart } from "./useCart";
+import { useCartTotals } from "./useCartTotals";
 
 const Cart = () => {
 	const [isModalOpen, openModal, closeModal] = useModal();
@@ -18,6 +20,8 @@ const Cart = () => {
 		decreaseItemQuantity,
 		clearCart,
 	] = useCart();
+
+	const { totalPrice } = useCartTotals();
 
 	return (
 		<div className={styles.cartWrapper}>
@@ -57,9 +61,7 @@ const Cart = () => {
 				</div>
 				<div className={`${styles.flex} ${styles.total}`}>
 					<Text>TOTAL</Text>
-					<span className={styles.totalPrice}>
-						$ {items.reduce((acc, item) => acc + item.price * item.quantity, 0)}
-					</span>
+					<span className={styles.totalPrice}>$ {formatPrice(totalPrice)}</span>
 				</div>
 				<Button role="link" href="/checkout" extraClasses={styles.checkout}>
 					Checkout

@@ -1,3 +1,4 @@
+import { formatPrice } from "@/utils/formatPrice";
 import Counter from "../Counter/Counter";
 import Text from "../Text/Text";
 import styles from "./SmallItem.module.css";
@@ -30,7 +31,7 @@ const SmallItem = (props: SmallItemProps) => {
 						{name}
 					</Text>
 					<Text tag="span" extraClasses={styles.itemPrice}>
-						$ {price}
+						$ {formatPrice(price)}
 					</Text>
 				</div>
 

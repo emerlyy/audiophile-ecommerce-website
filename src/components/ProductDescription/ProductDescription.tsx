@@ -2,6 +2,7 @@ import { addItemToCart } from "@/features/cart/cartSlice";
 import { useAppDispatch } from "@/hooks/reduxHooks";
 import { useCounter } from "@/hooks/useCounter";
 import { Product } from "@/types";
+import { formatPrice } from "@/utils/formatPrice";
 import Button from "../Button/Button";
 import Counter from "../Counter/Counter";
 import GoBackLink from "../GoBackLink/GoBackLink";
@@ -43,7 +44,7 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
 							{product.name}
 						</Title>
 						<Text extraClasses={styles.description}>{product.description}</Text>
-						<span className={styles.price}>$ {product.price}</span>
+						<span className={styles.price}>$ {formatPrice(product.price)}</span>
 						<div className={styles.purchase}>
 							<Counter
 								value={count}
@@ -59,7 +60,7 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
 											image: `/assets/cart/image-${product.slug}.jpg`,
 											price: product.price,
 											quantity: count,
-											shortName: product.name,
+											shortName: product.shortName,
 										})
 									);
 								}}
