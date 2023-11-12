@@ -1,0 +1,45 @@
+.checkoutForm {
+	padding: 54px 48px 48px 48px;
+	border-radius: 0.5rem;
+	background-color: var(--color-white);
+}
+
+.formTitle {
+	margin-bottom: 40px;
+}
+
+.fullWidth {
+	grid-column: 1/-1;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 24px 16px;
+	margin-bottom: 58px;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.emoney {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 24px 16px;
+}
+
+.cashWrapper {
+	display: flex;
+	align-items: center;
+	column-gap: 32px;
+}
+
+.cashText {
+	font-weight: 400;
+}
+
+.cashImage {
+	max-width: 100%;
+	aspect-ratio: 1;
+}

@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import * as api from "./api";
 import "./index.css";
 import CategoryPage from "./pages/CategoryPage";
+import CheckoutPage from "./pages/CheckoutPage";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import PageTemplate from "./pages/templates/PageTemplate";
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
 				loader: ({ params }) => {
 					return api.getProductBySlug(params.slug);
 				},
+			},
+			{
+				path: "/checkout",
+				element: <CheckoutPage />,
 			},
 		],
 		errorElement: <>Page not found</>,

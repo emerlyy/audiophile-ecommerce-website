@@ -1,0 +1,40 @@
+.summary {
+	padding: 32px;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	row-gap: 32px;
+	border-radius: 0.5rem;
+	background-color: var(--color-white);
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	row-gap: 24px;
+}
+
+.totalsText {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.price {
+	color: var(--color-black);
+	text-align: right;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.grandTotal {
+	margin-top: 24px;
+	margin-bottom: 0;
+  
+	> .price {
+		color: var(--color-accent);
+	}
+}

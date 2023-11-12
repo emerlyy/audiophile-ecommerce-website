@@ -1,0 +1,14 @@
+.checkout {
+	background-color: var(--color-gray);
+	padding: 80px 0 140px 0;
+}
+
+.goback {
+	margin-bottom: 38px;
+}
+
+.content {
+	display: grid;
+	grid-template-columns: min(66%, 730px) 1fr;
+	gap: 30px;
+}

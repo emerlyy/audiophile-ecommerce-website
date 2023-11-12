@@ -1,0 +1,24 @@
+
+.radioBody {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 16px;
+	padding: 18px 16px;
+	border: 0.0625rem solid var(--color-input-border);
+	border-radius: 0.5rem;
+	color: var(--color-black);
+	font-size: 14px;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: -0.25px;
+	transition: 0.2s;
+
+	&:hover {
+		border-color: var(--color-accent);
+	}
+
+	&:has(input:checked) {
+		border-color: var(--color-accent);
+	}
+}
