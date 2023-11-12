@@ -1,7 +1,8 @@
 import { CartItem } from "@/types";
+import { loadCart } from "@/utils/localStorage";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-type CartState = {
+export type CartState = {
 	items: CartItem[];
 	totalQuantity: number;
 };
@@ -15,9 +16,11 @@ const getTotalQuantity = (items: CartItem[]): number => {
 	return items.length;
 };
 
+const savedCart = loadCart();
+
 const cartSlice = createSlice({
 	name: "@@cart",
-	initialState,
+	initialState: savedCart ? savedCart : initialState,
 	reducers: {
 		addItemToCart: (state, action: PayloadAction<CartItem>) => {
 			const existedItem = state.items.find(

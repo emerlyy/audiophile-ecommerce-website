@@ -74,7 +74,7 @@ const Button = (props: ButtonProps) => {
 				<Link
 					className={getStyles(type, color, extraClasses)}
 					to={props.href}
-					// reloadDocument={true}
+					reloadDocument={true}
 				>
 					{children}
 				</Link>
