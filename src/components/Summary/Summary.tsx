@@ -1,6 +1,5 @@
-import { selectAllCartItems } from "@/features/cart/cartSelectors";
+import { useCartInfo } from "@/features/cart/useCartInfo";
 import { useCartTotals } from "@/features/cart/useCartTotals";
-import { useAppSelector } from "@/hooks/reduxHooks";
 import { formatPrice } from "@/utils/formatPrice";
 import Button from "../Button/Button";
 import SmallItem from "../SmallItem/SmallItem";
@@ -9,24 +8,29 @@ import Title from "../Title/Title";
 import styles from "./Summary.module.css";
 
 const Summary = () => {
-	const items = useAppSelector(selectAllCartItems);
+	const { items, totalQuantity } = useCartInfo();
 	const { totalPrice, tax, grandTotal } = useCartTotals();
+
 	return (
 		<div className={styles.summary}>
 			<Title tag="h2" size="xs">
 				Summary
 			</Title>
 			<div className={styles.list}>
-				{items.map((item, index) => (
-					<SmallItem
-						key={`${item.id}-${index}`}
-						variant="static"
-						name={item.shortName}
-						image={item.image}
-						price={item.price}
-						quantity={item.quantity}
-					/>
-				))}
+				{totalQuantity > 0 ? (
+					items.map((item, index) => (
+						<SmallItem
+							key={`${item.id}-${index}`}
+							variant="static"
+							name={item.shortName}
+							image={item.image}
+							price={item.price}
+							quantity={item.quantity}
+						/>
+					))
+				) : (
+					<Text extraClasses={styles.emptyMessage}>Cart is empty</Text>
+				)}
 			</div>
 			<div>
 				<div className={styles.totalsText}>
@@ -46,7 +50,7 @@ const Summary = () => {
 					<span className={styles.price}>$ {formatPrice(grandTotal)}</span>
 				</div>
 			</div>
-			<Button role="button" form="checkout-form">
+			<Button role="button" form="checkout-form" disabled={!totalQuantity}>
 				Continue & Pay
 			</Button>
 		</div>

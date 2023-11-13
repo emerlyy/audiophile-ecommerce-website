@@ -23,9 +23,14 @@ const options: PaymentOption[] = [
 type PaymentMethodProps = {
 	selected: PaymentMethodValue;
 	onChange: (value: PaymentMethodValue) => void;
+	disabled?: boolean;
 };
 
-const PaymentMethod = ({ selected, onChange }: PaymentMethodProps) => {
+const PaymentMethod = ({
+	selected,
+	onChange,
+	disabled,
+}: PaymentMethodProps) => {
 	const onOptionChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const target = event.target;
 		const value = target.name;
@@ -45,6 +50,7 @@ const PaymentMethod = ({ selected, onChange }: PaymentMethodProps) => {
 						label={option.label}
 						checked={option.value === selected}
 						onChange={onOptionChange}
+						disabled={disabled}
 					/>
 				))}
 			</div>

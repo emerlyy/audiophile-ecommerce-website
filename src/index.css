@@ -61,6 +61,12 @@ input[type="radio"] {
 	&:checked::before {
 		transform: scale(1);
 	}
+
+	&:disabled {
+		&:checked::before {
+			box-shadow: inset 1em 1em var(--color-accent-light);
+		}
+	}
 }
 
 .container {

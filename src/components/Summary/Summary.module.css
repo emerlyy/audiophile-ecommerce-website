@@ -33,8 +33,15 @@
 .grandTotal {
 	margin-top: 24px;
 	margin-bottom: 0;
-  
+
 	> .price {
 		color: var(--color-accent);
 	}
+}
+
+.emptyMessage {
+	font-size: 16px;
+	font-weight: 700;
+	padding-block: 32px;
+	text-align: center;
 }

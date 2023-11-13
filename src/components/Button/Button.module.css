@@ -22,6 +22,11 @@
 	&:hover {
 		background: var(--color-accent-light);
 	}
+
+	&:disabled {
+		background: var(--color-accent-light);
+		cursor: unset;
+	}
 }
 
 .button-primary.button-accent {

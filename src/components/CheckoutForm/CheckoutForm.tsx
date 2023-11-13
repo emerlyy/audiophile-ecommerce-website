@@ -1,4 +1,5 @@
 import CashImage from "@/assets/checkout/icon-cash-on-delivery.svg";
+import { useCartInfo } from "@/features/cart/useCartInfo";
 import { PaymentMethodValue } from "@/types";
 import { useState } from "react";
 import { RegisterOptions, SubmitHandler, useForm } from "react-hook-form";
@@ -60,6 +61,11 @@ const formBlocks: {
 						value: true,
 						message: "Required",
 					},
+					pattern: {
+						value:
+							/^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/,
+						message: "Wrong format",
+					},
 				},
 			},
 			{
@@ -70,6 +76,10 @@ const formBlocks: {
 					required: {
 						value: true,
 						message: "Required",
+					},
+					pattern: {
+						value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
+						message: "Wrong format",
 					},
 				},
 			},
@@ -98,6 +108,10 @@ const formBlocks: {
 					required: {
 						value: true,
 						message: "Required",
+					},
+					pattern: {
+						value: /(^\d{5}(?:[\s]?[-\s][\s]?\d{4})?$)/,
+						message: "Wrong format",
 					},
 				},
 			},
@@ -137,6 +151,10 @@ const emoneyInputs: FormInput[] = [
 				value: true,
 				message: "Required",
 			},
+			pattern: {
+				value: /^\d{9}$/,
+				message: "Wrong format",
+			},
 		},
 	},
 	{
@@ -147,6 +165,10 @@ const emoneyInputs: FormInput[] = [
 			required: {
 				value: true,
 				message: "Required",
+			},
+			pattern: {
+				value: /^\d{4}$/,
+				message: "Wrong format",
 			},
 		},
 	},
@@ -170,6 +192,8 @@ const CheckoutForm = () => {
 		setPaymentMethod(value);
 	};
 
+	const { totalQuantity } = useCartInfo();
+
 	const renderPaymentMethodBody = () => {
 		switch (paymentMethod) {
 			case "e-money":
@@ -184,6 +208,7 @@ const CheckoutForm = () => {
 									label={label}
 									placeholder={placeholder}
 									className={className}
+									disabled={!totalQuantity}
 									{...register(id, validators)}
 								/>
 							)
@@ -197,6 +222,8 @@ const CheckoutForm = () => {
 							className={styles.cashImage}
 							src={CashImage}
 							alt="Cash on delivery"
+							width={48}
+							height={48}
 						/>
 						<Text extraClasses={styles.cashText}>
 							The ‘Cash on Delivery’ option enables you to pay in cash when our
@@ -221,6 +248,7 @@ const CheckoutForm = () => {
 				<CheckoutFormBlock key={title} title={title} className={styles.grid}>
 					{inputs.map(({ id, label, placeholder, validators, className }) => (
 						<Input
+							disabled={!totalQuantity}
 							errorMessage={errors[id]?.message}
 							key={id}
 							id={id}
@@ -234,6 +262,7 @@ const CheckoutForm = () => {
 			))}
 			<CheckoutFormBlock title="Payment Details">
 				<PaymentMethod
+					disabled={!totalQuantity}
 					selected={paymentMethod}
 					onChange={onPaymentMethodChange}
 				/>
