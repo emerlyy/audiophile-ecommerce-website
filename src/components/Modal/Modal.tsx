@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import styles from "./Modal.module.css";
 
@@ -16,6 +17,10 @@ const Modal = ({
 	onRequestClose,
 	children,
 }: ModalProps) => {
+	useEffect(() => {
+		document.body.className = isOpen ? "noscroll" : "";
+	}, [isOpen]);
+
 	return (
 		<>
 			{isOpen && (
@@ -27,7 +32,7 @@ const Modal = ({
 					{createPortal(
 						<div className={styles.overlay} onClick={() => onRequestClose()}>
 							{variant === "insideOverlay" && (
-								<div className={className}>{children}</div>
+								<div className={className} onClick={(e)=>e.stopPropagation()}>{children}</div>
 							)}
 						</div>,
 						document.getElementById("root") ?? document.body

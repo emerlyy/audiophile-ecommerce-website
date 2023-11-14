@@ -11,17 +11,17 @@ const ProductGallery = ({ first, second, third }: GalleryProps) => {
 					<picture className={styles.galleryPicture}>
 						<source media="(min-width: 62rem)" srcSet={first?.desktop} />
 						<source media="(min-width: 40rem)" srcSet={first?.tablet} />
-						<img src={first?.mobile} />
+						<img src={first?.mobile} alt="first" />
 					</picture>
 					<picture className={styles.galleryPicture}>
 						<source media="(min-width: 62rem)" srcSet={second?.desktop} />
 						<source media="(min-width: 40rem)" srcSet={second?.tablet} />
-						<img src={second?.mobile} />
+						<img src={second?.mobile} alt="second" />
 					</picture>
 					<picture className={styles.galleryPicture}>
 						<source media="(min-width: 62rem)" srcSet={third?.desktop} />
 						<source media="(min-width: 40rem)" srcSet={third?.tablet} />
-						<img src={third?.mobile} />
+						<img src={third?.mobile}  alt='third'/>
 					</picture>
 				</div>
 			</div>

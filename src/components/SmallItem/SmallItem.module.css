@@ -4,6 +4,11 @@
 	grid-template-rows: 64px;
 	gap: 16px;
 	align-items: center;
+
+	&.small {
+		grid-template-columns: 50px 1fr;
+		grid-template-rows: 50px;
+	}
 }
 
 .image {
@@ -35,6 +40,10 @@
 .itemPrice {
 	font-weight: 700;
 	font-size: 14px;
+}
+
+.quantityText {
+	font-weight: 700;
 }
 
 .quantityCounter {

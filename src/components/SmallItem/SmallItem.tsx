@@ -3,8 +3,11 @@ import Counter from "../Counter/Counter";
 import Text from "../Text/Text";
 import styles from "./SmallItem.module.css";
 
+type SmallItemSize = "basic" | "small";
+
 type SmallItemStatic = {
 	variant: "static";
+	size?: SmallItemSize;
 	name: string;
 	image: string;
 	price: number;
@@ -20,10 +23,10 @@ type SmallItemChangeable = {
 type SmallItemProps = SmallItemStatic | SmallItemChangeable;
 
 const SmallItem = (props: SmallItemProps) => {
-	const { variant, image, name, price, quantity } = props;
+	const { variant, image, name, price, quantity, size = "basic" } = props;
 
 	return (
-		<div className={styles.smallItem}>
+		<div className={`${styles.smallItem} ${size==='small'?` ${styles.small}`:''}`}>
 			<img className={styles.image} src={image} alt={name} />
 			<div className={styles.content}>
 				<div>
@@ -35,7 +38,11 @@ const SmallItem = (props: SmallItemProps) => {
 					</Text>
 				</div>
 
-				{variant === "static" && <Text tag="span">x{quantity}</Text>}
+				{variant === "static" && (
+					<Text tag="span" extraClasses={styles.quantityText}>
+						x{quantity}
+					</Text>
+				)}
 				{variant === "changeable" && (
 					<div className={styles.quantityCounter}>
 						<Counter

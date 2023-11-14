@@ -7,7 +7,7 @@ import styles from "./CategoryCard.module.css";
 const CategoryCard = ({ link, image, title }: Category) => {
 	return (
 		<Button role="link" href={link} type="text" extraClasses={styles.category}>
-			<img className={styles.categoryImg} src={image} />
+			<img className={styles.categoryImg} src={image} alt={title}/>
 			<Title tag="h2" size="xs">
 				{title}
 			</Title>

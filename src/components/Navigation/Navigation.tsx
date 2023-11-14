@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from "./Navigation.module.css";
 
-type Link = {
+type NavLink = {
 	title: string;
 	href: string;
 };
 
-const links: Link[] = [
+const links: NavLink[] = [
 	{
 		title: "HOME",
 		href: "/",

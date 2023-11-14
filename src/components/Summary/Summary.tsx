@@ -50,7 +50,10 @@ const Summary = () => {
 					<span className={styles.price}>$ {formatPrice(grandTotal)}</span>
 				</div>
 			</div>
-			<Button role="button" form="checkout-form" disabled={!totalQuantity}>
+			<Button
+				role="button"
+				rest={{ form: "checkout-form", disabled: !totalQuantity }}
+			>
 				Continue & Pay
 			</Button>
 		</div>

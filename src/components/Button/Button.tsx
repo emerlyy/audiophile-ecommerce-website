@@ -43,6 +43,7 @@ type LinkButton = {
 	href: string;
 	children: React.ReactNode;
 	extraClasses?: string;
+	rest?: React.AnchorHTMLAttributes<HTMLAnchorElement>;
 };
 
 type TriggerButton = {
@@ -52,7 +53,8 @@ type TriggerButton = {
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 	children: React.ReactNode;
 	extraClasses?: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+	rest?: React.ButtonHTMLAttributes<HTMLButtonElement>;
+};
 
 type ButtonProps = LinkButton | TriggerButton;
 
@@ -64,7 +66,7 @@ const Button = (props: ButtonProps) => {
 				<button
 					className={getStyles(type, color, extraClasses)}
 					onClick={props.onClick}
-					{...props}
+					{...props.rest}
 				>
 					{children}
 				</button>
@@ -75,6 +77,7 @@ const Button = (props: ButtonProps) => {
 					className={getStyles(type, color, extraClasses)}
 					to={props.href}
 					reloadDocument={true}
+					{...props.rest}
 				>
 					{children}
 				</Link>

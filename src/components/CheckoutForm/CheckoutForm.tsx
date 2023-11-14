@@ -1,8 +1,10 @@
 import CashImage from "@/assets/checkout/icon-cash-on-delivery.svg";
-import { useCartInfo } from "@/features/cart/useCartInfo";
+import { useCart } from "@/features/cart/useCart";
+import { useModal } from "@/hooks/useModal";
 import { PaymentMethodValue } from "@/types";
 import { useState } from "react";
 import { RegisterOptions, SubmitHandler, useForm } from "react-hook-form";
+import CheckoutConfirmationModal from "../CheckoutConfirmationModal/CheckoutConfirmationModal";
 import CheckoutFormBlock from "../CheckoutFormBlock/CheckoutFormBlock";
 import Input from "../Input/Input";
 import PaymentMethod from "../PaymentMethod/PaymentMethod";
@@ -182,7 +184,7 @@ const CheckoutForm = () => {
 	} = useForm<FormInputs>();
 
 	const onSubmit: SubmitHandler<FormInputs> = (data) => {
-		console.log(data);
+		openConfirmationModal();
 	};
 
 	const [paymentMethod, setPaymentMethod] =
@@ -192,7 +194,17 @@ const CheckoutForm = () => {
 		setPaymentMethod(value);
 	};
 
-	const { totalQuantity } = useCartInfo();
+	const [totalQuantity, , , , clearCart] = useCart();
+	const [
+		isConfirmationModalOpen,
+		openConfirmationModal,
+		closeConfirmationModal,
+	] = useModal();
+
+	const handleConfirmationClose = () => {
+		closeConfirmationModal();
+		clearCart();
+	};
 
 	const renderPaymentMethodBody = () => {
 		switch (paymentMethod) {
@@ -236,39 +248,45 @@ const CheckoutForm = () => {
 	};
 
 	return (
-		<form
-			id="checkout-form"
-			className={styles.checkoutForm}
-			onSubmit={handleSubmit(onSubmit)}
-		>
-			<Title tag="h2" size="lg" extraClasses={styles.formTitle}>
-				Checkout
-			</Title>
-			{formBlocks.map(({ title, inputs }) => (
-				<CheckoutFormBlock key={title} title={title} className={styles.grid}>
-					{inputs.map(({ id, label, placeholder, validators, className }) => (
-						<Input
-							disabled={!totalQuantity}
-							errorMessage={errors[id]?.message}
-							key={id}
-							id={id}
-							label={label}
-							placeholder={placeholder}
-							className={className}
-							{...register(id, validators)}
-						/>
-					))}
+		<>
+			<form
+				id="checkout-form"
+				className={styles.checkoutForm}
+				onSubmit={handleSubmit(onSubmit)}
+			>
+				<Title tag="h2" size="lg" extraClasses={styles.formTitle}>
+					Checkout
+				</Title>
+				{formBlocks.map(({ title, inputs }) => (
+					<CheckoutFormBlock key={title} title={title} className={styles.grid}>
+						{inputs.map(({ id, label, placeholder, validators, className }) => (
+							<Input
+								disabled={!totalQuantity}
+								errorMessage={errors[id]?.message}
+								key={id}
+								id={id}
+								label={label}
+								placeholder={placeholder}
+								className={className}
+								{...register(id, validators)}
+							/>
+						))}
+					</CheckoutFormBlock>
+				))}
+				<CheckoutFormBlock title="Payment Details">
+					<PaymentMethod
+						disabled={!totalQuantity}
+						selected={paymentMethod}
+						onChange={onPaymentMethodChange}
+					/>
+					{renderPaymentMethodBody()}
 				</CheckoutFormBlock>
-			))}
-			<CheckoutFormBlock title="Payment Details">
-				<PaymentMethod
-					disabled={!totalQuantity}
-					selected={paymentMethod}
-					onChange={onPaymentMethodChange}
-				/>
-				{renderPaymentMethodBody()}
-			</CheckoutFormBlock>
-		</form>
+			</form>
+			<CheckoutConfirmationModal
+				isOpen={isConfirmationModalOpen}
+				onClose={handleConfirmationClose}
+			/>
+		</>
 	);
 };
 
