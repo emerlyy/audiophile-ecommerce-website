@@ -6,6 +6,7 @@ type ModalProps = {
 	isOpen: boolean;
 	variant?: "insideOverlay" | "outsideOverlay";
 	className?: string;
+	overlayClass?: string;
 	onRequestClose: () => void;
 	children?: React.ReactNode;
 };
@@ -14,6 +15,7 @@ const Modal = ({
 	isOpen,
 	variant = "insideOverlay",
 	className,
+	overlayClass,
 	onRequestClose,
 	children,
 }: ModalProps) => {
@@ -30,9 +32,14 @@ const Modal = ({
 					)}
 					{/* overlay */}
 					{createPortal(
-						<div className={styles.overlay} onClick={() => onRequestClose()}>
+						<div
+							className={overlayClass ? overlayClass : styles.overlay}
+							onClick={() => onRequestClose()}
+						>
 							{variant === "insideOverlay" && (
-								<div className={className} onClick={(e)=>e.stopPropagation()}>{children}</div>
+								<div className={className} onClick={(e) => e.stopPropagation()}>
+									{children}
+								</div>
 							)}
 						</div>,
 						document.getElementById("root") ?? document.body

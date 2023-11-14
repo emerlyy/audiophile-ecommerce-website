@@ -40,7 +40,6 @@ const Cart = () => {
 				<div className={styles.cartBody}>
 					{totalQuantity > 0 ? (
 						<>
-							{" "}
 							<div className={styles.flex}>
 								<Title tag="h2" size="xs">
 									Cart ({totalQuantity})

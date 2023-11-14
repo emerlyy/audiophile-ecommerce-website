@@ -1,5 +1,11 @@
+.confirmationOverlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 4;
+}
+
 .checkoutConfirmation {
-	margin-block: 80px;
 	padding: 48px;
 	position: absolute;
 	top: 50%;
@@ -7,7 +13,7 @@
 	translate: -50% -50%;
 	background: var(--color-white);
 	border-radius: 8px;
-	width: 540px; 
+	width: 540px;
 }
 
 .confirmationImage {
@@ -37,24 +43,24 @@
 	flex-grow: 1;
 	background-color: var(--color-gray);
 	padding: 24px 24px 12px 24px;
+	justify-content: center;
 }
 
 .itemsList {
 	display: flex;
-	flex-grow: 1;
 	flex-direction: column;
-	align-items:stretch;
-	justify-content: center;
+	align-items: stretch;
 	gap: 16px;
 	padding-bottom: 12px;
+	max-height: 194px;
+	overflow: auto;
 }
-
 
 .showMore {
 	width: 100%;
 	padding-block: 12px;
 	border: none;
-	border-top: 1px solid rgba(0, 0, 0, 0.08);	
+	border-top: 1px solid rgba(0, 0, 0, 0.08);
 	cursor: pointer;
 	display: inline-flex;
 	justify-content: center;

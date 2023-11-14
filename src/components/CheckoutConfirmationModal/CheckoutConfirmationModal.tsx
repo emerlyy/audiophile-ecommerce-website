@@ -31,9 +31,14 @@ const CheckoutConfirmationModal = ({
 		<Modal
 			isOpen={isOpen}
 			onRequestClose={onClose}
+			overlayClass={styles.confirmationOverlay}
 			className={styles.checkoutConfirmation}
 		>
-			<img src={ConfirmationImage} className={styles.confirmationImage} alt="icon-order"/>
+			<img
+				src={ConfirmationImage}
+				className={styles.confirmationImage}
+				alt="icon-order"
+			/>
 			<Title size="lg" extraClasses={styles.confirmationTitle}>
 				Thank you
 				<br /> for your order
