@@ -34,10 +34,8 @@
 
 .cartBody {
 	padding: 32px;
-	position: absolute;
 	z-index: 1;
-	top: 40px;
-	right: 20%;
+	margin: 40px 0 0 auto;
 	translate: 0 98px;
 	overflow: auto;
 	outline: none;
@@ -70,6 +68,8 @@
 }
 
 .content {
+	max-height: calc(64px + 64px + 64px + 48px);
+	overflow: auto;
 	margin-block: 32px;
 	display: flex;
 	flex-direction: column;

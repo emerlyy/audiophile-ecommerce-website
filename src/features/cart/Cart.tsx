@@ -35,8 +35,9 @@ const Cart = () => {
 				isOpen={isModalOpen}
 				variant="insideOverlay"
 				onRequestClose={closeModal}
-				className={styles.cartBody}
+				className='container'
 			>
+				<div className={styles.cartBody}>
 					{totalQuantity > 0 ? (
 						<>
 							{" "}
@@ -81,6 +82,7 @@ const Cart = () => {
 							<Text extraClasses={styles.emptyMessage}>Cart is empty</Text>
 						</>
 					)}
+				</div>
 			</Modal>
 		</div>
 	);
