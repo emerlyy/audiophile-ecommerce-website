@@ -7,21 +7,21 @@
 }
 
 .title-2xl {
-	font-size: 56px;
-	line-height: 103.571%;
-	letter-spacing: 2px;
+	font-size: 36px;
+	line-height: 111%;
+	letter-spacing: 1.286px;
 }
 
 .title-xl {
-	font-size: 40px;
-	line-height: 110%;
-	letter-spacing: 1.429px;
+	font-size: 28px;
+	line-height: normal;
+	letter-spacing: 1px;
 }
 
 .title-lg {
-	font-size: 32px;
-	line-height: 112.5%;
-	letter-spacing: 1.143px;
+	font-size: 24px;
+	line-height: 150%;
+	letter-spacing: 0.857px;
 }
 
 .title-md {
@@ -35,8 +35,8 @@
 }
 
 .title-xs {
-	font-size: 18px;
-	letter-spacing: 1.286px;
+	font-size: 15px;
+	letter-spacing: 1.071px;
 }
 
 .title-overline {
@@ -65,4 +65,29 @@
 
 .title-transparent {
 	color: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 768px) {
+	.title-2xl {
+		font-size: 56px;
+		line-height: 103.571%;
+		letter-spacing: 2px;
+	}
+
+	.title-xl {
+		font-size: 40px;
+		line-height: 110%;
+		letter-spacing: 1.429px;
+	}
+
+	.title-lg {
+		font-size: 32px;
+		line-height: 112.5%;
+		letter-spacing: 1.143px;
+	}
+
+	.title-xs {
+		font-size: 18px;
+		letter-spacing: 1.286px;
+	}
 }
