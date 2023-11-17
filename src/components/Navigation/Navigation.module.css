@@ -34,7 +34,7 @@
 	z-index: 10;
 	padding-block: 32px;
 	overflow: auto;
-	max-height: calc(100vh - 100%);
+	max-height: calc(100lvh - 100%);
 	border-radius: 0rem 0rem 0.5rem 0.5rem;
 
 	@media(min-width:640px){
