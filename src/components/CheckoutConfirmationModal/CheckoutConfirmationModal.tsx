@@ -38,6 +38,8 @@ const CheckoutConfirmationModal = ({
 				src={ConfirmationImage}
 				className={styles.confirmationImage}
 				alt="icon-order"
+				width={48}
+				height={48}
 			/>
 			<Title size="lg" extraClasses={styles.confirmationTitle}>
 				Thank you
