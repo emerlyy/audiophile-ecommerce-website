@@ -1,21 +1,53 @@
 .hero {
 	background-color: #191919;
-	margin-bottom: 120px;
+	margin-bottom: 40px;
+
+	@media (min-width: 640px) {
+		margin-bottom: 96px;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 120px;
+	}
 }
 
 .inner {
-	padding: 130px 0 160px;
-	background: url("/assets/home/desktop/image-hero.jpg") no-repeat right -120px
-		top -80px;
-	background-size: 1300px;
+	padding-block: 108px 112px;
+	background: url("/assets/home/mobile/image-header.jpg") no-repeat center top -100px /
+		370px;
+	@media (min-width: 640px) {
+		padding-block: 126px 168px;
+		background: url("/assets/home/tablet/image-header.jpg") no-repeat center top -100px /
+			760px;
+	}
+
+	@media (min-width: 992px) {
+		padding-block: 130px 160px;
+		background: url("/assets/home/desktop/image-hero.jpg") no-repeat right -120px
+			top -80px / 1300px;
+	}
 }
 
 .content {
-	width: 396px;
+	max-width: 396px;
+	margin: auto;
+	text-align: center;
+
+	@media (min-width: 640px) {
+	}
+
+	@media (min-width: 992px) {
+		text-align: start;
+		margin: unset;
+	}
 }
 
 .overline {
-	margin-bottom: 24px;
+	margin-bottom: 16px;
+
+	@media (min-width: 640px) {
+		margin-bottom: 24px;
+	}
 }
 
 .title {
@@ -24,5 +56,9 @@
 
 .text {
 	max-width: 38ch;
-	margin-bottom: 40px;
+	margin: 0 auto 28px;
+
+	@media (min-width: 992px) {
+		margin: 0 0 40px;
+	}
 }

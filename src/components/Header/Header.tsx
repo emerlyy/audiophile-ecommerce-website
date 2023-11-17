@@ -8,8 +8,13 @@ const Header = () => {
 		<header className={styles.header}>
 			<div className="container">
 				<div className={styles.inner}>
-					<Logo />
-					<Navigation />
+					<div className={styles.logo}>
+						{" "}
+						<Logo />
+					</div>
+					<div className={styles.headerNavigation}>
+						<Navigation />
+					</div>
 					<Cart />
 				</div>
 			</div>

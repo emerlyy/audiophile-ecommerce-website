@@ -1,15 +1,35 @@
 .featuresWrapper {
-	margin-bottom: 160px;
+	margin-bottom: 88px;
+
+	@media (min-width: 640px) {
+		margin-bottom: 120px;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 160px;
+	}
 }
 
 .content {
 	display: flex;
-	gap: 125px;
-	align-items: flex-start;
+	flex-direction: column;
+	gap: 88px;
+
+	@media (min-width: 640px) {
+		gap: 120px;
+	}
+
+	@media (min-width: 992px) {
+		flex-direction: row;
+		gap: 125px;
+		align-items: flex-start;
+	}
 }
 
 .features {
-	max-width: 57%;
+	@media (min-width: 992px) {
+		max-width: 57%;
+	}
 }
 
 .featuresText {
@@ -17,7 +37,38 @@
 }
 
 .title {
-	margin-bottom: 32px;
+	margin-bottom: 24px;
+
+	@media (min-width: 640px) {
+		margin-bottom: 32px;
+	}
+}
+
+.addons {
+	display: flex;
+	column-gap: 12px;
+	flex-direction: column;
+	.title {
+		width: 50%;
+	}
+
+	@media (min-width: 640px) {
+		flex-direction: row;
+	}
+
+	@media (min-width: 992px) {
+		flex-direction: column;
+
+		.title {
+			width: unset;
+		}
+	}
+}
+
+.addonList {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 }
 
 .addon {

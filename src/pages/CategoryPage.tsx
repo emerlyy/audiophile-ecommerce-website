@@ -13,7 +13,7 @@ const CategoryPage = () => {
 		<>
 			<CategoryPageTitle>{params.category}</CategoryPageTitle>
 			<ProductsGridList products={products} />
-			<Categories />
+			<Categories/>
 			<BestGear />
 		</>
 	);

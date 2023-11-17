@@ -4,51 +4,98 @@
 
 .inner {
 	position: relative;
-	padding: 4.7rem 0 3rem 0;
+	padding-block: 52px 38px;
+
 	&:before {
 		content: "";
 		position: absolute;
 		top: 0;
-		left: 0;
+		left: 50%;
+		translate: -50%;
 		width: 6.3125rem;
 		height: 0.25rem;
 		background: var(--color-accent);
 	}
+
+	@media (min-width: 640px) {
+		padding-block: 60px 46px;
+
+		&:before {
+			left: 0;
+			translate: 0;
+		}
+	}
+
+	@media (min-width: 992px) {
+		padding: 4.7rem 0 3rem 0;
+	}
 }
 
 .header {
+	margin-bottom: 3rem;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 2.25rem;
+	flex-direction: column;
+	gap: 3rem;
+
+	@media (min-width: 640px) {
+		align-items: flex-start;
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 2.25rem;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row;
+	}
 }
 
 .content {
 	display: grid;
-	grid-template-areas:
-		"a c"
-		"b c";
-	grid-template-columns: 48.5% 1fr;
-	gap: 3.5rem;
+	grid-template-columns: 1fr;
+	gap: 48px;
+	text-align: center;
+	place-items: center;
+
+	@media (min-width: 640px) {
+		text-align: start;
+		place-items: unset;
+		gap: 80px;
+		grid-template-areas:
+			"a a"
+			"b c";
+	}
+
+	@media (min-width: 992px) {
+		grid-template-areas:
+			"a c"
+			"b c";
+		grid-template-columns: 48.5% 1fr;
+		gap: 3.5rem;
+	}
 }
 
 .bold {
 	font-weight: 700;
 }
 
-.areaA {
-	grid-area: a;
-}
+@media (min-width: 640px) {
+	.areaA {
+		grid-area: a;
+	}
 
-.areaB {
-	grid-area: b;
-}
+	.areaB {
+		grid-area: b;
+	}
 
-.areaC {
-	grid-area: c;
-}
+	.areaC {
+		grid-area: c;
+	}
 
-.socials {
-	justify-self: end;
-	align-self: center;
+	.socials {
+		justify-self: end;
+		align-self: center;
+	}
 }

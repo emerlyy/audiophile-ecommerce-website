@@ -23,9 +23,13 @@ const categories: Category[] = [
 	},
 ];
 
-const Categories = () => {
+type CategoriesProps = {
+	mb?: boolean;
+};
+
+const Categories = ({ mb = true }: CategoriesProps) => {
 	return (
-		<section className={styles.categories}>
+		<section className={mb ? styles.categories : ""}>
 			<div className="container">
 				<div className={styles.stack}>
 					{categories.map((product, index) => (

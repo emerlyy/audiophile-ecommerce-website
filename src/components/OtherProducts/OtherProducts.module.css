@@ -1,14 +1,41 @@
 .other {
-	margin-bottom: 160px;
+	margin-bottom: 120px;
+
+	@media (min-width: 640px) {
+		margin-bottom: 98px;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 160px;
+	}
 }
 
 .title {
 	text-align: center;
-	margin-bottom: 64px;
+	margin-bottom: 40px;
+
+	@media (min-width: 640px) {
+		margin-bottom: 56px;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 64px;
+	}
 }
 
 .productsList {
 	display: flex;
 	justify-content: center;
-	gap: 30px;
+	flex-direction: column;
+	gap: 56px;
+	text-align: center;
+
+	@media (min-width: 640px) {
+		flex-direction: row;
+		gap: 12px;
+	}
+
+	@media (min-width: 992px) {
+		gap: 30px;
+	}
 }

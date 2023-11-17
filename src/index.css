@@ -74,11 +74,11 @@ input[type="radio"] {
 	padding-inline: 24px;
 	margin: 0 auto;
 
-	@media (min-width: 768px) {
+	@media (min-width: 640px) {
 		padding-inline: 40px;
 	}
 
-	@media (min-width: 1280px) {
+	@media (min-width: 1200px) {
 		padding: 0;
 		max-width: 69.375rem;
 	}

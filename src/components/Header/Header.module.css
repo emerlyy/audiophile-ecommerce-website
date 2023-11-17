@@ -5,9 +5,33 @@
 }
 
 .inner {
-	padding: 2.1875rem 0;
+	padding: 2rem 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	@media (min-width: 640px) {
+		justify-content: start;
+		gap: 42px;
+
+		.logo {
+			flex-grow: 1;
+		}
+	}
+
+	@media (min-width: 992px) {
+		padding: 2.1875rem 0;
+		justify-content: space-between;
+
+		.headerNavigation {
+			order: 0;
+		}
+
+		.logo {
+			flex-grow: 0;
+		}
+	}
+}
+.headerNavigation {
+	order: -1;
 }

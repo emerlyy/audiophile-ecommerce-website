@@ -1,11 +1,28 @@
 .categories {
-	margin-bottom: 160px;
+	margin-bottom: 120px;
+
+	@media (min-width: 640px) {
+		margin-bottom: 96px;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 160px;
+	}
 }
 
 .stack {
-	padding-top: 80px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 30px;
+	gap: 16px;
+	flex-direction: column;
+
+	@media (min-width: 640px) {
+		flex-direction: row;
+		gap: 10px;
+	}
+
+	@media (min-width: 992px) {
+		gap: 30px;
+	}
 }

@@ -6,12 +6,12 @@ import Title from "@/components/Title/Title";
 import styles from "./BestGear.module.css";
 
 type BestGearProps = {
-	mb?: string;
+	className?: string;
 };
 
-const BestGear = ({ mb }: BestGearProps) => {
+const BestGear = ({ className }: BestGearProps) => {
 	return (
-		<section className={styles.bestGear} style={{ marginBottom: mb }}>
+		<section className={className ? className : styles.bestGear}>
 			<div className="container">
 				<div className={styles.inner}>
 					<div className={styles.content}>

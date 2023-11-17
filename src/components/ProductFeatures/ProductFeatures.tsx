@@ -19,11 +19,11 @@ const ProductFeatures = ({ features, includedItems }: ProductFeaturesProps) => {
 						</Title>
 						<Text extraClasses={styles.featuresText}>{features}</Text>
 					</div>
-					<div>
+					<div className={styles.addons}>
 						<Title tag="h2" size="lg" extraClasses={styles.title}>
 							In The Box
 						</Title>
-						<ul>
+						<ul className={styles.addonList}>
 							{includedItems.map((item) => (
 								<li key={item.item}>
 									<div className={styles.addon}>

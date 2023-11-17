@@ -3,17 +3,23 @@
 	inset: 0;
 	background: rgba(0, 0, 0, 0.4);
 	z-index: 4;
+	padding-inline: 24px;
 }
 
 .checkoutConfirmation {
-	padding: 48px;
+	width: calc(100% - 48px);
+	padding: 32px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	translate: -50% -50%;
 	background: var(--color-white);
 	border-radius: 8px;
-	width: 540px;
+
+	@media (min-width: 640px) {
+		padding: 48px;
+		width: 540px;
+	}
 }
 
 .confirmationImage {
@@ -22,19 +28,33 @@
 
 .confirmationTitle {
 	max-width: 15ch;
-	margin-bottom: 24px;
+	margin-bottom: 16px;
+
+	@media (min-width: 640px) {
+		margin-bottom: 24px;
+	}
 }
 
 .confirmationText {
-	margin-bottom: 32px;
+	margin-bottom: 24px;
+
+	@media (min-width: 640px) {
+		margin-bottom: 32px;
+	}
 }
 
 .summary {
+	margin-bottom: 24px;
 	display: flex;
-	margin-bottom: 48px;
+	flex-direction: column;
 	border-radius: 0.5rem;
 	overflow: hidden;
 	justify-content: space-between;
+
+	@media (min-width: 640px) {
+		margin-bottom: 48px;
+		flex-direction: row;
+	}
 }
 
 .itemsListWrapper {
@@ -77,12 +97,16 @@
 }
 
 .grandTotalWrapper {
+	padding: 16px 24px;
 	flex-basis: 45%;
-	padding: 40px 32px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	background: var(--color-black);
+
+	@media (min-width: 640px) {
+		padding: 40px 32px;
+	}
 }
 
 .grandTotalPrice {

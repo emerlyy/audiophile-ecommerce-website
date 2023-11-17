@@ -6,7 +6,7 @@ import * as api from "./api";
 import "./index.css";
 import CategoryPage from "./pages/CategoryPage";
 import CheckoutPage from "./pages/CheckoutPage";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import ProductPage from "./pages/ProductPage";
 import PageTemplate from "./pages/templates/PageTemplate";
 import { store } from "./store";

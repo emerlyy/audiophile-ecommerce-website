@@ -1,13 +1,32 @@
 .zx7speaker {
-	margin-bottom: 3rem;
+	margin-bottom: 1.5rem;
+
+	@media (min-width: 640px) {
+		margin-bottom: 2rem;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 3rem;
+	}
 }
 
 .inner {
 	background-color: var(--color-gray);
-	padding: 6.25rem;
+	padding: 100px 24px;
 	border-radius: 0.5rem;
-	background: url("/src/assets/home/desktop/image-speaker-zx7.jpg"),
+	background: url("/src/assets/home/mobile/image-speaker-zx7.jpg") center /
+			cover,
 		lightgray 0px 0px / 100% 100% no-repeat;
+
+	@media (min-width: 640px) {
+		padding: 100px 96px;
+		background-image: url("/src/assets/home/tablet/image-speaker-zx7.jpg");
+	}
+
+	@media (min-width: 992px) {
+		padding: 100px 96px;
+		background-image: url("/src/assets/home/desktop/image-speaker-zx7.jpg");
+	}
 }
 
 .zx7title {

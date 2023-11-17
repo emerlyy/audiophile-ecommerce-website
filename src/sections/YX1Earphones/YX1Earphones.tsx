@@ -16,17 +16,19 @@ const YX1Earphones = () => {
 						<img src={YX1MobileImage} alt="YX1 Earphones" />
 					</picture>
 					<div className={styles.content}>
-						<Title size="md" color="dark" extraClasses={styles.yx1title}>
-							YX1 Earphones
-						</Title>
-						<Button
-						role="link"
-							href="http://localhost:5173/earphones/yx1-earphones"
-							type="outlined"
-							color="dark"
-						>
-							See Product
-						</Button>
+						<div>
+							<Title size="md" color="dark" extraClasses={styles.yx1title}>
+								YX1 Earphones
+							</Title>
+							<Button
+								role="link"
+								href="http://localhost:5173/earphones/yx1-earphones"
+								type="outlined"
+								color="dark"
+							>
+								See Product
+							</Button>
+						</div>
 					</div>
 				</div>
 			</div>

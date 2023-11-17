@@ -1,22 +1,46 @@
 .zx9speaker {
-	margin-bottom: 3rem;
+	margin-bottom: 1.5rem;
+
+	@media (min-width: 640px) {
+		margin-bottom: 2rem;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 3rem;
+	}
 }
 
 .inner {
-	padding: 6rem 0 0 0;
-	border-radius: 0.5rem;
-	background: #d87d4a;
+	padding: 55px 24px;
 	display: flex;
-	gap: 8.625rem;
-	background: url("/assets/home/desktop/pattern-circles.svg") no-repeat -15rem -5rem,
+	flex-direction: column;
+	align-items: center;
+	gap: 32px;
+
+	border-radius: 0.5rem;
+	background: url("/assets/home/desktop/pattern-circles.svg") no-repeat,
 		var(--color-accent);
+	background-position: center -130px;
 	background-size: cover;
+
+	@media (min-width: 640px) {
+		padding: 52px 0 64px;
+		background-position: center -280px;
+		background-size: unset;
+		gap: 64px;
+	}
+
+	@media (min-width: 992px) {
+		flex-direction: row;
+		padding: 6rem 0 0 0;
+		gap: 8.625rem;
+		background-position: -10rem -2rem;
+	}
 }
 
 .zx9picture {
-	width: 25.625rem;
-	margin: 0 0 0 7.3125rem;
 	overflow: hidden;
+	width: 170px;
 
 	> img {
 		position: relative;
@@ -24,18 +48,46 @@
 		width: 100%;
 		object-fit: cover;
 	}
+
+	@media (min-width: 640px) {
+		width: 200px;
+	}
+
+	@media (min-width: 992px) {
+		margin: 0 0 0 7.3125rem;
+		width: 25.625rem;
+	}
 }
 
 .description {
-	padding-top: 2.3125rem;
+	text-align: center;
+
+	@media (min-width: 992px) {
+		padding-top: 2.3125rem;
+		text-align: start;
+	}
 }
 
 .zx9title {
 	margin-bottom: 1.5rem;
 	max-width: 10ch;
+	margin-inline: auto;
+
+	@media (min-width: 992px) {
+		margin-inline: unset;
+	}
 }
 
 .zx9text {
-	margin-bottom: 2.5rem;
+	margin-bottom: 1.5rem;
 	max-width: 38ch;
+	margin-inline: auto;
+
+	@media (min-width: 640px) {
+		margin-bottom: 2.5rem;
+	}
+
+	@media (min-width: 992px) {
+		margin-inline: unset;
+	}
 }

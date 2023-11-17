@@ -11,7 +11,7 @@ const Footer = () => {
 				<div className={styles.inner}>
 					<div className={styles.header}>
 						<Logo />
-						<Navigation />
+						<Navigation burger={false} />
 					</div>
 					<div className={styles.content}>
 						<Text color="gray" extraClasses={styles.areaA}>

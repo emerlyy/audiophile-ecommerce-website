@@ -1,18 +1,41 @@
 .product {
-	padding-top: 80px;
-	margin-bottom: 160px;
+	padding-top: 16px;
+	margin-bottom: 88px;
+
+	@media (min-width: 768px) {
+		padding-top: 32px;
+		margin-bottom: 120px;
+	}
+
+	@media (min-width: 992px) {
+		padding-top: 80px;
+		margin-bottom: 160px;
+	}
 }
 
 .goback {
-	margin-bottom: 56px;
+	margin-bottom: 24px;
+
+	@media (min-width: 992px) {
+		margin-bottom: 56px;
+	}
 }
 
 .inner {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
 	grid-auto-rows: max(560px, 1fr);
-	gap: 1.875rem;
 	align-items: center;
+	gap: 32px;
+
+	@media (min-width: 768px) {
+		grid-template-columns: minmax(280px, 1fr) 1fr;
+		gap: 70px;
+	}
+
+	@media (min-width: 992px) {
+		grid-template-columns: 1fr 1fr;
+		gap: 1.875rem;
+	}
 }
 
 .picture {
@@ -27,21 +50,35 @@
 }
 
 .content {
-	justify-self: end;
-	max-width: 450px;
+	@media (min-width: 768px) {
+		justify-self: end;
+		max-width: 450px;
+	}
 }
 
 .overline {
-	margin-bottom: 16px;
+	margin-bottom: 24px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 16px;
+	}
 }
 
 .title {
-	margin-bottom: 32px;
+	margin-bottom: 24px;
 	max-width: 12ch;
+
+	@media (min-width: 768px) {
+		margin-bottom: 32px;
+	}
 }
 
 .description {
-	margin-bottom: 32px;
+	margin-bottom: 24px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 32px;
+	}
 }
 
 .price {
@@ -51,7 +88,11 @@
 	font-weight: 700;
 	line-height: normal;
 	text-transform: uppercase;
-	margin-bottom: 48px;
+	margin-bottom: 32px;
+
+	@media (min-width: 992px) {
+		margin-bottom: 48px;
+	}
 }
 
 .purchase {

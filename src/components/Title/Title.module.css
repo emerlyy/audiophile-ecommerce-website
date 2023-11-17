@@ -67,7 +67,7 @@
 	color: rgba(255, 255, 255, 0.5);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
 	.title-2xl {
 		font-size: 56px;
 		line-height: 103.571%;
@@ -85,7 +85,9 @@
 		line-height: 112.5%;
 		letter-spacing: 1.143px;
 	}
+}
 
+@media (min-width: 992px) {
 	.title-xs {
 		font-size: 18px;
 		letter-spacing: 1.286px;

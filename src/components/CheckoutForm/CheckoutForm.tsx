@@ -9,7 +9,6 @@ import CheckoutFormBlock from "../CheckoutFormBlock/CheckoutFormBlock";
 import Input from "../Input/Input";
 import PaymentMethod from "../PaymentMethod/PaymentMethod";
 import Text from "../Text/Text";
-import Title from "../Title/Title";
 import styles from "./CheckoutForm.module.css";
 
 interface FormInputs {
@@ -254,9 +253,7 @@ const CheckoutForm = () => {
 				className={styles.checkoutForm}
 				onSubmit={handleSubmit(onSubmit)}
 			>
-				<Title tag="h2" size="lg" extraClasses={styles.formTitle}>
-					Checkout
-				</Title>
+				<h2 className={styles.formTitle}>Checkout</h2>
 				{formBlocks.map(({ title, inputs }) => (
 					<CheckoutFormBlock key={title} title={title} className={styles.grid}>
 						{inputs.map(({ id, label, placeholder, validators, className }) => (

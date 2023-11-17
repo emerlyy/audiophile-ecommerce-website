@@ -10,7 +10,7 @@ type ProductDetailsProps = {
 
 const ProductDetails = ({ product }: ProductDetailsProps) => {
 	const { features, includes, gallery, others } = product;
-	
+
 	return (
 		<>
 			<ProductDescription product={product} />

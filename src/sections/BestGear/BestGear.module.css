@@ -1,37 +1,76 @@
 .bestGear {
-	margin-bottom: 10rem;
+	margin-bottom: 7.5rem;
+
+	@media (min-width: 992px) {
+		margin-bottom: 10rem;
+	}
 }
 
 .inner {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 1.875rem;
 	align-items: center;
+	grid-template-columns: 1fr;
+	gap: 2.5rem;
+
+	@media (min-width: 640px) {
+		gap: 4rem;
+	}
+
+	@media (min-width: 992px) {
+		grid-template-columns: 1fr 1fr;
+		gap: 1.875rem;
+	}
 }
 
 .content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+	@media (min-width: 640px) {
+		padding-inline: 58px;
+	}
+
+	@media (min-width: 992px) {
+		padding: 0;
+		align-items: flex-start;
+		text-align: start;
+	}
 }
 
 .bestGearPicture {
 	border-radius: 0.5rem;
 	overflow: hidden;
-
+	grid-row-start: 1;
+	height: 300px;
 	> img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 	}
+
+	@media (min-width: 992px) {
+		grid-row-start: unset;
+		height: auto;
+	}
 }
 
 .bestGearTitle {
 	margin-bottom: 2rem;
-	max-width: 18ch;
+	max-width: 24ch;
 
 	> span {
 		color: var(--color-accent);
 	}
+
+	@media (min-width: 992px) {
+		max-width: 18ch;
+	}
 }
 
 .bestGearText {
-	max-width: 48ch;
+	@media (min-width: 992px) {
+		max-width: 48ch;
+	}
 }

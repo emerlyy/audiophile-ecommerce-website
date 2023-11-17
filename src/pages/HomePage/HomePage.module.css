@@ -1,0 +1,11 @@
+.bestGear {
+	margin-bottom: 120px;
+
+	@media (min-width: 640px) {
+		margin-bottom: 96px;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 200px;
+	}
+}
