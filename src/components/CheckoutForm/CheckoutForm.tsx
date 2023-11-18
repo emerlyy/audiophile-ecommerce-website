@@ -282,6 +282,7 @@ const CheckoutForm = () => {
 			<CheckoutConfirmationModal
 				isOpen={isConfirmationModalOpen}
 				onClose={handleConfirmationClose}
+				clearCart={clearCart}
 			/>
 		</>
 	);

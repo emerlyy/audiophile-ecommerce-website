@@ -35,7 +35,7 @@ const Cart = () => {
 				isOpen={isModalOpen}
 				variant="insideOverlay"
 				onRequestClose={closeModal}
-				className='container'
+				className="container"
 			>
 				<div className={styles.cartBody}>
 					{totalQuantity > 0 ? (

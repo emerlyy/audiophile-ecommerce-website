@@ -2,6 +2,7 @@ import ConfirmationImage from "@/assets/checkout/icon-order-confirmation.svg";
 import { useCartInfo } from "@/features/cart/useCartInfo";
 import { useCartTotals } from "@/features/cart/useCartTotals";
 import { formatPrice } from "@/utils/formatPrice";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
@@ -13,11 +14,13 @@ import styles from "./CheckoutConfirmationModal.module.css";
 type CheckoutConfirmationModalProps = {
 	isOpen: boolean;
 	onClose: () => void;
+	clearCart: () => void;
 };
 
 const CheckoutConfirmationModal = ({
 	isOpen,
 	onClose,
+	clearCart,
 }: CheckoutConfirmationModalProps) => {
 	const { items } = useCartInfo();
 	const { grandTotal } = useCartTotals();
@@ -48,7 +51,11 @@ const CheckoutConfirmationModal = ({
 			<Text extraClasses={styles.confirmationText}>
 				You will receive an email confirmation shortly.
 			</Text>
-			<div className={styles.summary}>
+			<motion.div
+				layout="size"
+				transition={{ duration: 0.7, type: "spring" }}
+				className={styles.summary}
+			>
 				<div className={styles.itemsListWrapper}>
 					<div className={styles.itemsList}>
 						{isListOpened ? (
@@ -93,12 +100,12 @@ const CheckoutConfirmationModal = ({
 						$ {formatPrice(grandTotal)}
 					</span>
 				</div>
-			</div>
+			</motion.div>
 			<Button
 				role="link"
 				href="/"
 				extraClasses={styles.homeButton}
-				rest={{ onClick: onClose }}
+				rest={{ onClick: clearCart }}
 			>
 				Back to home
 			</Button>
