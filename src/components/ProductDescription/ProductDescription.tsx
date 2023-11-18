@@ -9,6 +9,7 @@ import GoBackLink from "../GoBackLink/GoBackLink";
 import Text from "../Text/Text";
 import Title from "../Title/Title";
 import styles from "./ProductDescription.module.css";
+import { toast,ToastContainer } from "react-toastify";
 
 type ProductDescriptionProps = {
 	product: Product;
@@ -63,6 +64,9 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
 											shortName: product.shortName,
 										})
 									);
+									toast.success('Item was added to the cart',{
+										toastId: 'item-added'
+									});
 								}}
 							>
 								Add to cart

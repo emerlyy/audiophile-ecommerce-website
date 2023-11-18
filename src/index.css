@@ -1,5 +1,6 @@
 @import "reset-css";
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap");
+@import "react-toastify/dist/ReactToastify.min.css";
 
 * {
 	box-sizing: border-box;
@@ -30,6 +31,10 @@ a {
 	--color-placeholder: rgba(0, 0, 0, 0.4);
 	--color-error: #cd2c2c;
 	--color-input-border: #cfcfcf;
+
+	--toastify-toast-width: auto;
+	--toastify-toast-min-height: 40px;
+	--toastify-color-success: #008140;
 }
 
 input[type="radio"] {
