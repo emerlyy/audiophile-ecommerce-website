@@ -3,13 +3,13 @@ import { useAppDispatch } from "@/hooks/reduxHooks";
 import { useCounter } from "@/hooks/useCounter";
 import { Product } from "@/types";
 import { formatPrice } from "@/utils/formatPrice";
+import { toast } from "react-toastify";
 import Button from "../Button/Button";
 import Counter from "../Counter/Counter";
 import GoBackLink from "../GoBackLink/GoBackLink";
 import Text from "../Text/Text";
 import Title from "../Title/Title";
 import styles from "./ProductDescription.module.css";
-import { toast,ToastContainer } from "react-toastify";
 
 type ProductDescriptionProps = {
 	product: Product;
@@ -64,8 +64,8 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
 											shortName: product.shortName,
 										})
 									);
-									toast.success('Item was added to the cart',{
-										toastId: 'item-added'
+									toast.success("Item was added to the cart", {
+										toastId: "item-added",
 									});
 								}}
 							>

@@ -9,13 +9,14 @@ const Header = () => {
 			<div className="container">
 				<div className={styles.inner}>
 					<div className={styles.logo}>
-						{" "}
 						<Logo />
 					</div>
 					<div className={styles.headerNavigation}>
 						<Navigation />
 					</div>
-					<Cart />
+					<div className={styles.headerCart}>
+						<Cart />
+					</div>
 				</div>
 			</div>
 		</header>

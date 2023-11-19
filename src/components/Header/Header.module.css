@@ -8,8 +8,8 @@
 	padding: 2rem 0;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
 	@media (min-width: 640px) {
 		justify-content: start;
 		gap: 42px;
@@ -21,17 +21,28 @@
 
 	@media (min-width: 992px) {
 		padding: 2.1875rem 0;
-		justify-content: space-between;
+		justify-content: stretch;
 
 		.headerNavigation {
+			display: flex;
+			justify-content: center;
 			order: 0;
+			flex-grow: 1;
 		}
 
 		.logo {
 			flex-grow: 0;
+			flex-basis: 20%;
+		}
+
+		.headerCart {
+			display: flex;
+			justify-content: end;
+			flex-basis: 20%;
 		}
 	}
 }
+
 .headerNavigation {
 	order: -1;
 }
