@@ -22,7 +22,7 @@ const YX1Earphones = () => {
 							</Title>
 							<Button
 								role="link"
-								href="http://localhost:5173/earphones/yx1-earphones"
+								href="/earphones/yx1-earphones"
 								type="outlined"
 								color="dark"
 							>

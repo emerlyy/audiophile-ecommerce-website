@@ -16,7 +16,6 @@ node_modules
 !.yarn/sdks
 !.yarn/versions
 !.yarn/cache
-package-lock.json
 
 # Testing
 coverage
