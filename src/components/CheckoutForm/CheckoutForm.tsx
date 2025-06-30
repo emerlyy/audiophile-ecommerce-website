@@ -28,7 +28,7 @@ interface FormInput {
 	label: string;
 	placeholder: string;
 	className?: string;
-	validators: RegisterOptions;
+	validators: RegisterOptions<FormInputs, keyof FormInputs>;
 }
 
 const formBlocks: {
